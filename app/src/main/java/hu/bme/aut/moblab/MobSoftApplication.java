@@ -6,9 +6,14 @@ package hu.bme.aut.moblab;
 
 import android.app.Application;
 
+import javax.inject.Inject;
+import hu.bme.aut.moblab.repository.Repository;
 import hu.bme.aut.moblab.ui.*;
 
 public class MobSoftApplication extends Application {
+
+    @Inject
+    Repository repository;
 
     public static MobSoftApplicationComponent injector;
 
@@ -21,5 +26,7 @@ public class MobSoftApplication extends Application {
                         uIModule(
                                 new UIModule(this)
                         ).build();
+        injector.inject(this);
+        repository.open(getApplicationContext());
     }
 }
