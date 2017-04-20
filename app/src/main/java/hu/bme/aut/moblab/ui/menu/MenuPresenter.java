@@ -1,4 +1,4 @@
-package hu.bme.aut.moblab.ui.main;
+package hu.bme.aut.moblab.ui.menu;
 
 import hu.bme.aut.moblab.ui.*;
 
@@ -6,15 +6,15 @@ import hu.bme.aut.moblab.ui.*;
  * Created by bali on 2017. 03. 24..
  */
 
-public class MainPresenter extends Presenter<MainScreen> {
+public class MenuPresenter extends Presenter<MenuScreen> {
 
 
-    public MainPresenter() {
+    public MenuPresenter() {
     }
 
 
     @Override
-    public void attachScreen(MainScreen screen) {
+    public void attachScreen(MenuScreen screen) {
         super.attachScreen(screen);
     }
 

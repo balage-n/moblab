@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import hu.bme.aut.moblab.R;
+import hu.bme.aut.moblab.MobSoftApplication;
+
 import android.widget.Toast;
 
 import javax.inject.Inject;

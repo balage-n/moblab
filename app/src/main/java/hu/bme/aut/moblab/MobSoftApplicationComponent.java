@@ -1,8 +1,9 @@
-package hu.bme.aut.moblab.ui;
+package hu.bme.aut.moblab;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
+import hu.bme.aut.moblab.ui.UIModule;
 import hu.bme.aut.moblab.ui.main.MainActivity;
 
 /**

@@ -1,4 +1,4 @@
-package hu.bme.aut.moblab.ui.main;
+package hu.bme.aut.moblab;
 
 /**
  * Created by bali on 2017. 03. 24..
