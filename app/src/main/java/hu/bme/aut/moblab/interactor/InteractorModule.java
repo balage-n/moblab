@@ -2,6 +2,7 @@ package hu.bme.aut.moblab.interactor;
 
 import dagger.Module;
 import dagger.Provides;
+import hu.bme.aut.moblab.interactor.result.LoginInteractor;
 import hu.bme.aut.moblab.interactor.result.ResultsInteractor;
 
 /**
@@ -12,7 +13,12 @@ import hu.bme.aut.moblab.interactor.result.ResultsInteractor;
 public class InteractorModule {
 
     @Provides
-    public ResultsInteractor provideFavourites() {
+    public ResultsInteractor provideResults() {
         return new ResultsInteractor();
+    }
+
+    @Provides
+    public LoginInteractor provideLogin() {
+        return new LoginInteractor();
     }
 }
