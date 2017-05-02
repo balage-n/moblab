@@ -11,4 +11,5 @@ public interface GameScreen {
     void incrementScore(int score);
     void decremeentScore(int score);
     void finishGame();
+    void showMessage(String text);
 }

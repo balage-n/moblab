@@ -6,4 +6,5 @@ package hu.bme.aut.moblab.ui.highscore;
 
 public interface HighscoreScreen {
     void showHighscore();
+    void showMessage(String msg);
 }

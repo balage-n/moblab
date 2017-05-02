@@ -8,10 +8,13 @@ import hu.bme.aut.moblab.interactor.result.LoginInteractor;
 import hu.bme.aut.moblab.interactor.result.ResultsInteractor;
 import hu.bme.aut.moblab.repository.RepositoryModule;
 import hu.bme.aut.moblab.ui.UIModule;
+import hu.bme.aut.moblab.ui.game.GameActivity;
 import hu.bme.aut.moblab.ui.game.GamePresenter;
+import hu.bme.aut.moblab.ui.highscore.HighscoreActivity;
 import hu.bme.aut.moblab.ui.highscore.HighscorePresenter;
 import hu.bme.aut.moblab.ui.main.MainActivity;
 import hu.bme.aut.moblab.ui.main.MainPresenter;
+import hu.bme.aut.moblab.ui.menu.MenuActivity;
 import hu.bme.aut.moblab.ui.menu.MenuPresenter;
 
 /**
@@ -22,6 +25,12 @@ import hu.bme.aut.moblab.ui.menu.MenuPresenter;
 @Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class})
 public interface MobSoftApplicationComponent {
     void inject(MainActivity mainActivity);
+
+    void inject(MenuActivity menuActivity);
+
+    void inject(HighscoreActivity highscoreActivity);
+
+    void inject(GameActivity gameActivity);
 
     void inject(ResultsInteractor resultsInteractor);
 

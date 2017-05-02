@@ -10,11 +10,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import hu.bme.aut.moblab.model.LoginRequest;
 import hu.bme.aut.moblab.model.Result;
 
 public class MemoryRepository implements Repository {
 
     public static List<Result> results;
+    public static List<LoginRequest> requests;
 
     @Override
     public void open(Context context) {
@@ -39,6 +41,11 @@ public class MemoryRepository implements Repository {
     @Override
     public void saveResult(Result result) {
         results.add(result);
+    }
+
+    @Override
+    public void saveRequest(LoginRequest loginRequest) {
+        requests.add(loginRequest);
     }
 
     @Override

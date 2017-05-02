@@ -1,6 +1,8 @@
 package hu.bme.aut.moblab.ui;
 
 import de.greenrobot.event.EventBus;
+import hu.bme.aut.moblab.ui.game.GamePresenter;
+import hu.bme.aut.moblab.ui.highscore.HighscorePresenter;
 import hu.bme.aut.moblab.ui.main.MainPresenter;
 import android.content.Context;
 import java.util.concurrent.Executor;
@@ -8,6 +10,7 @@ import java.util.concurrent.Executors;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
+import hu.bme.aut.moblab.ui.menu.MenuPresenter;
 
 @Module
 public class UIModule {
@@ -26,6 +29,24 @@ public class UIModule {
     @Singleton
     public MainPresenter provideMainPresenter() {
         return new MainPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public MenuPresenter provideMenuPresenter() {
+        return new MenuPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public GamePresenter provideGamePresenter() {
+        return new GamePresenter();
+    }
+
+    @Provides
+    @Singleton
+    public HighscorePresenter provideHighscorePresenter() {
+        return new HighscorePresenter();
     }
 
     @Provides

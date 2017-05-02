@@ -8,6 +8,7 @@ import com.orm.SugarRecord;
 import java.util.ArrayList;
 import java.util.List;
 
+import hu.bme.aut.moblab.model.LoginRequest;
 import hu.bme.aut.moblab.model.Result;
 
 /**
@@ -33,6 +34,11 @@ public class SugarOrmRepository implements Repository{
     @Override
     public void saveResult(Result result) {
         SugarRecord.saveInTx(result);
+    }
+
+    @Override
+    public void saveRequest(LoginRequest loginRequest) {
+        SugarRecord.saveInTx(loginRequest);
     }
 
     @Override

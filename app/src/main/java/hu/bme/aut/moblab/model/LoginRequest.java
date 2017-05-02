@@ -16,14 +16,14 @@ public class LoginRequest {
     public LoginRequest() {
     }
 
-    public LoginRequest(String score, String name) {
-        this.password = score;
+    public LoginRequest(String password, String name) {
+        this.password = password;
         this.name = name;
     }
 
-    public LoginRequest(Long id, String score, String name) {
+    public LoginRequest(Long id, String password, String name) {
         this.id = id;
-        this.password = score;
+        this.password = password;
         this.name = name;
     }
 

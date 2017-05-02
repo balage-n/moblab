@@ -8,6 +8,7 @@ import android.content.Context;
 
 import java.util.List;
 
+import hu.bme.aut.moblab.model.LoginRequest;
 import hu.bme.aut.moblab.model.Result;
 
 public interface Repository {
@@ -19,6 +20,8 @@ public interface Repository {
     List<Result> getResults();
 
     void saveResult(Result result);
+
+    void saveRequest(LoginRequest loginRequest);
 
     void removeResult(Result result);
 

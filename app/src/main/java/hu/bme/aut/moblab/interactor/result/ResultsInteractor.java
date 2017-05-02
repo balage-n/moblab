@@ -25,7 +25,7 @@ public class ResultsInteractor {
         MobSoftApplication.injector.inject(this);
     }
 
-    public void getFavourites() {
+    public void getResults() {
         GetResultsEvent event = new GetResultsEvent();
         try {
             List<Result> results = repository.getResults();
@@ -37,7 +37,7 @@ public class ResultsInteractor {
         }
     }
 
-    public void saveFavourites(Result result) {
+    public void saveResult(Result result) {
 
         SaveResultEvent event = new SaveResultEvent();
         event.setResult(result);
@@ -50,7 +50,7 @@ public class ResultsInteractor {
         }
     }
 
-    public void removeFavourites(Result result) {
+    public void removeResult(Result result) {
         RemoveResultEvent event = new RemoveResultEvent();
         event.setResults(result);
         try {
