@@ -22,10 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.menu.MenuActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+        <activity android:name=".ui.game.GameActivity" />
+        <activity android:name=".ui.highscore.HighscoreActivity" />
     </application>
 
 </manifest>
