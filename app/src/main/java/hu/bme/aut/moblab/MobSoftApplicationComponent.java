@@ -14,8 +14,6 @@ import hu.bme.aut.moblab.ui.highscore.HighscoreActivity;
 import hu.bme.aut.moblab.ui.highscore.HighscorePresenter;
 import hu.bme.aut.moblab.ui.main.MainActivity;
 import hu.bme.aut.moblab.ui.main.MainPresenter;
-import hu.bme.aut.moblab.ui.menu.MenuActivity;
-import hu.bme.aut.moblab.ui.menu.MenuPresenter;
 
 /**
  * Created by bali on 2017. 03. 24..
@@ -25,8 +23,6 @@ import hu.bme.aut.moblab.ui.menu.MenuPresenter;
 @Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class})
 public interface MobSoftApplicationComponent {
     void inject(MainActivity mainActivity);
-
-    void inject(MenuActivity menuActivity);
 
     void inject(HighscoreActivity highscoreActivity);
 
@@ -39,8 +35,6 @@ public interface MobSoftApplicationComponent {
     void inject(MobSoftApplication mobSoftApplication);
 
     void inject(MainPresenter mainPresenter);
-
-    void inject(MenuPresenter menuPresenter);
 
     void inject(GamePresenter gamePresenter);
 

@@ -7,10 +7,13 @@ import java.util.concurrent.Executor;
 import javax.inject.Inject;
 
 import de.greenrobot.event.EventBus;
+import hu.bme.aut.moblab.interactor.result.LoginInteractor;
 import hu.bme.aut.moblab.interactor.result.ResultsInteractor;
 import hu.bme.aut.moblab.interactor.result.events.GetResultsEvent;
+import hu.bme.aut.moblab.model.LoginRequest;
 import hu.bme.aut.moblab.model.Result;
 import hu.bme.aut.moblab.ui.*;
+
 import static hu.bme.aut.moblab.MobSoftApplication.injector;
 
 /**
@@ -21,7 +24,7 @@ public class MainPresenter extends Presenter<MainScreen> {
 
 
     @Inject
-    ResultsInteractor resultsInteractor;
+    LoginInteractor loginInteractor;
 
     @Inject
     Executor executor;
@@ -42,15 +45,14 @@ public class MainPresenter extends Presenter<MainScreen> {
         super.detachScreen();
     }
 
-    public void getFavourites() {
+    public void postLogin() {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                resultsInteractor.getResults();
+                loginInteractor.postLogin(new LoginRequest("1234", "Aladar"));
             }
         });
     }
-
 
     public void onEventMainThread(GetResultsEvent event) {
         if (event.getThrowable() != null) {

@@ -13,7 +13,6 @@ import hu.bme.aut.moblab.model.Result;
 import hu.bme.aut.moblab.ui.Presenter;
 import hu.bme.aut.moblab.ui.game.GameScreen;
 import hu.bme.aut.moblab.ui.main.MainScreen;
-import hu.bme.aut.moblab.ui.menu.MenuScreen;
 
 import static hu.bme.aut.moblab.MobSoftApplication.injector;
 

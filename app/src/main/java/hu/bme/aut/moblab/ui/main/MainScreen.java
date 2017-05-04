@@ -6,4 +6,7 @@ package hu.bme.aut.moblab.ui.main;
 
 public interface MainScreen {
     void showMessage(String text);
+    void startNewGame();
+    void showHighscore();
+    void showLogin();
 }

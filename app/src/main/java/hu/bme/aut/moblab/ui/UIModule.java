@@ -10,7 +10,6 @@ import java.util.concurrent.Executors;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
-import hu.bme.aut.moblab.ui.menu.MenuPresenter;
 
 @Module
 public class UIModule {
@@ -29,12 +28,6 @@ public class UIModule {
     @Singleton
     public MainPresenter provideMainPresenter() {
         return new MainPresenter();
-    }
-
-    @Provides
-    @Singleton
-    public MenuPresenter provideMenuPresenter() {
-        return new MenuPresenter();
     }
 
     @Provides
