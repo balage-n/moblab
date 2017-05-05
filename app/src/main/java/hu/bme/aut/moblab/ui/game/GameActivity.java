@@ -34,7 +34,6 @@ public class GameActivity extends AppCompatActivity implements GameScreen {
     boolean isPaused = false;
     Integer score = 0;
     int secondsLeft = 60;
-    String username;
     long startTime;
     TextView timerUI;
     TextView scoreUI;

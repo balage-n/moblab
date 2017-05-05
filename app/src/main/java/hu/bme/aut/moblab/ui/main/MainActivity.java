@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.Settings;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,8 +14,13 @@ import hu.bme.aut.moblab.MobSoftApplication;
 import hu.bme.aut.moblab.ui.game.GameActivity;
 import hu.bme.aut.moblab.ui.highscore.HighscoreActivity;
 
+import android.text.InputType;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import javax.inject.Inject;
@@ -40,16 +46,29 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
         loginButton = (Button) findViewById(R.id.loginbutton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                alertDialog.setTitle("Login");
-                alertDialog.setMessage("You logged in successfully");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                alertDialog.show();
+//                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+//                alertDialog.setTitle("Login");
+//                alertDialog.setMessage("Please type your username/password");
+//                EditText usernameInput = new EditText(MainActivity.this);
+//                EditText passwordInput = new EditText(MainActivity.this);
+//                passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+//                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+//                        LinearLayout.LayoutParams.MATCH_PARENT,
+//                        LinearLayout.LayoutParams.MATCH_PARENT);
+//                usernameInput.setLayoutParams(lp);
+//                alertDialog.setView(usernameInput);
+//                passwordInput.setLayoutParams(lp);
+//                alertDialog.setView(passwordInput);
+//                alertDialog.setIcon(R.drawable.key);
+//                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Go",
+//                    new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                        }
+//                    });
+//                alertDialog.show();
+
+                showLogin();
             }
         });
 
@@ -108,12 +127,20 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
     @Override
     public void showLogin() {
         Dialog myDialog = new Dialog(this);
-//        myDialog.setContentView(R.layout.yourxmlfileID);
-//        myDialog.setCancelable(true);
-//        Button login = (Button) myDialog.findViewById(R.id.yourloginbtnID);
-//
-//        emailaddr = (EditText) myDialog.findViewById(R.id.youremailID);
-//        password = (EditText) myDialog.findViewById(R.id.yourpasswordID);
+        myDialog.setContentView(R.layout.activity_login);
+        myDialog.setCancelable(true);
+        Button postLogin = (Button) myDialog.findViewById(R.id.login);
+
+        EditText emailaddr = (EditText) myDialog.findViewById(R.id.username);
+        EditText password = (EditText) myDialog.findViewById(R.id.password);
         myDialog.show();
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        myDialog.getWindow().setLayout((6 * metrics.widthPixels)/7, ActionBar.LayoutParams.WRAP_CONTENT);
+
+//        postLogin.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                // TODO
+//            }
+//        });
     }
 }
