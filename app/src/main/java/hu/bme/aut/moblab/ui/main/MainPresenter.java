@@ -64,7 +64,8 @@ public class MainPresenter extends Presenter<MainScreen> {
         } else {
             if (screen != null) {
                 for(Result t : event.getResults()){
-                    screen.showMessage(t.getName());;
+//                    screen.showMessage(t.getName());
+
                 }
             }
         }

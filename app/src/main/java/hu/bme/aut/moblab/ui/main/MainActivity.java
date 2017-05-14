@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
         Dialog myDialog = new Dialog(this);
         myDialog.setContentView(R.layout.activity_login);
         myDialog.setCancelable(true);
-        Button postLogin = (Button) myDialog.findViewById(R.id.login);
+        Button postLogin = (Button) myDialog.findViewById(R.id.email_sign_in_button);
 
         EditText emailaddr = (EditText) myDialog.findViewById(R.id.username);
         EditText password = (EditText) myDialog.findViewById(R.id.password);
@@ -137,10 +137,11 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         myDialog.getWindow().setLayout((6 * metrics.widthPixels)/7, ActionBar.LayoutParams.WRAP_CONTENT);
 
-//        postLogin.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                // TODO
-//            }
-//        });
+        postLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // TODO
+                mainPresenter.postLogin();
+            }
+        });
     }
 }
