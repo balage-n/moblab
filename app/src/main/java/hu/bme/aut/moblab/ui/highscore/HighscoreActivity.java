@@ -31,13 +31,13 @@ public class HighscoreActivity extends AppCompatActivity implements HighscoreScr
         View wrLinearLayout = findViewById(R.id.world_records);
         View lrLinearLayout = findViewById(R.id.local_records);
         TextView valueTV = new TextView(this);
-        valueTV.setText("Józsi - 10 p");
-        valueTV.setId(5);
+//        valueTV.setText("Józsi - 10 p");
+//        valueTV.setId(5);
         valueTV.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
         TextView valueTV2 = new TextView(this);
-        valueTV2.setText("Béla - 5 p");
-        valueTV2.setId(6);
+//        valueTV2.setText("Béla - 5 p");
+//        valueTV2.setId(6);
         valueTV2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
         ((LinearLayout) wrLinearLayout).addView(valueTV);
