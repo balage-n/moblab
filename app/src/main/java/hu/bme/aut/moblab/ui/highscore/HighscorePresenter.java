@@ -40,6 +40,8 @@ public class HighscorePresenter extends Presenter<HighscoreScreen> {
         super.attachScreen(screen);
         injector.inject(this);
         bus.register(this);
+
+        getResults();
     }
 
     @Override
@@ -68,7 +70,7 @@ public class HighscorePresenter extends Presenter<HighscoreScreen> {
         } else {
             if (screen != null) {
                 for(Result t : event.getResults()){
-                    screen.showMessage(t.getName());;
+                    screen.showMessage(t.getName());
                 }
             }
         }

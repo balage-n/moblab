@@ -41,7 +41,7 @@ public class ResultTest {
     public void testResult() {
         HighscoreScreen highscoreScreen = mock(HighscoreScreen.class);
         highscorePresenter.attachScreen(highscoreScreen);
-        highscorePresenter.getResults();
+//        highscorePresenter.getResults();
 
         ArgumentCaptor<String> scoreCaptor = ArgumentCaptor.forClass(String.class);
         verify(highscoreScreen, times(2)).showMessage(scoreCaptor.capture());
