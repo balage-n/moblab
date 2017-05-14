@@ -43,12 +43,12 @@ public class ResultTest {
         highscorePresenter.attachScreen(highscoreScreen);
         highscorePresenter.getResults();
 
-        ArgumentCaptor<String> todosCaptor = ArgumentCaptor.forClass(String.class);
-        verify(highscoreScreen, times(2)).showMessage(todosCaptor.capture());
+        ArgumentCaptor<String> scoreCaptor = ArgumentCaptor.forClass(String.class);
+        verify(highscoreScreen, times(2)).showMessage(scoreCaptor.capture());
 
-        List<String> capturedTodos = todosCaptor.getAllValues();
-        assertEquals("todo one", capturedTodos.get(0));
-        assertEquals("todo two", capturedTodos.get(1));
+        List<String> capturedScores = scoreCaptor.getAllValues();
+        assertEquals("Józsi", capturedScores.get(0));
+        assertEquals("Béla", capturedScores.get(1));
     }
 
 
