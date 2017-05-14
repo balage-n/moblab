@@ -31,6 +31,9 @@ public class HighscorePresenter extends Presenter<HighscoreScreen> {
     @Inject
     EventBus bus;
 
+    @Inject
+    public HighscorePresenter() {
+    }
 
     @Override
     public void attachScreen(HighscoreScreen screen) {

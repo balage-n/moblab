@@ -6,6 +6,7 @@ import dagger.Component;
 import hu.bme.aut.moblab.interactor.InteractorModule;
 import hu.bme.aut.moblab.interactor.result.LoginInteractor;
 import hu.bme.aut.moblab.interactor.result.ResultsInteractor;
+import hu.bme.aut.moblab.network.NetworkModule;
 import hu.bme.aut.moblab.repository.RepositoryModule;
 import hu.bme.aut.moblab.ui.UIModule;
 import hu.bme.aut.moblab.ui.game.GameActivity;
@@ -20,7 +21,7 @@ import hu.bme.aut.moblab.ui.main.MainPresenter;
  */
 
 @Singleton
-@Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class})
+@Component(modules = {UIModule.class, RepositoryModule.class, InteractorModule.class, NetworkModule.class})
 public interface MobSoftApplicationComponent {
     void inject(MainActivity mainActivity);
 

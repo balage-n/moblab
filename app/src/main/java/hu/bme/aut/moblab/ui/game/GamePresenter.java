@@ -30,6 +30,10 @@ public class GamePresenter extends Presenter<GameScreen> {
     @Inject
     EventBus bus;
 
+    @Inject
+    public GamePresenter() {
+    }
+
     @Override
     public void attachScreen(GameScreen screen) {
         super.attachScreen(screen);
