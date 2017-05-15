@@ -6,6 +6,8 @@ package hu.bme.aut.moblab;
 
 import android.app.Application;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import javax.inject.Inject;
 import hu.bme.aut.moblab.repository.Repository;
 import hu.bme.aut.moblab.ui.*;
@@ -27,6 +29,8 @@ public class MobSoftApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
+
 
         injector =
                 DaggerMobSoftApplicationComponent.builder().

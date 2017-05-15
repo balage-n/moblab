@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "1050342973603",
+    "project_id": "aha-game"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050342973603:android:75e122876c633092",
+        "android_client_info": {
+          "package_name": "hu.bme.aut.moblab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs_D-pbVXeNhO_Z5oQP7-LKxMqGh04yyQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-99152922-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
