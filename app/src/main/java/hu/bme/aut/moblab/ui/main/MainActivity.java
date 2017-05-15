@@ -22,6 +22,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import javax.inject.Inject;
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
 
     @Inject
     MainPresenter mainPresenter;
+
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,12 +97,19 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
                 System.exit(0);
             }
         });
+
+        // Obtain the shared Tracker instance.
+        MobSoftApplication application = (MobSoftApplication) getApplication();
+        mTracker = application.getDefaultTracker();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         mainPresenter.attachScreen(this);
+
+        mTracker.setScreenName("Image~MainActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override
@@ -126,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
 
     @Override
     public void showLogin() {
-        Dialog myDialog = new Dialog(this);
+        final Dialog myDialog = new Dialog(this);
         myDialog.setContentView(R.layout.activity_login);
         myDialog.setCancelable(true);
         Button postLogin = (Button) myDialog.findViewById(R.id.email_sign_in_button);
@@ -141,7 +152,19 @@ public class MainActivity extends AppCompatActivity implements MainScreen {
             public void onClick(View v) {
                 // TODO
                 mainPresenter.postLogin();
+                myDialog.hide();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                loginButton.setText("Logged in");
             }
         });
     }
+
+    public void forceCrash(View view) {
+        throw new RuntimeException("This is a crash");
+    }
+
 }
